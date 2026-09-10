@@ -1,7 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// ---------- Custom Exception Classes ----------
 
 class InvalidAgeException extends Exception {
     public InvalidAgeException(String message) {
@@ -21,7 +20,7 @@ class InsufficientSeatsException extends Exception {
     }
 }
 
-// ---------- Business Logic Class ----------
+
 
 class BusBooking {
     private int availableSeats;
@@ -53,7 +52,6 @@ class BusBooking {
     }
 }
 
-// ---------- Main Class ----------
 
 public class BusTicketBooking {
     public static void main(String[] args) {

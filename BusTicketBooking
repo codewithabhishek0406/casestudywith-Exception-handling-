@@ -1,0 +1,80 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+// ---------- Custom Exception Classes ----------
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+class InvalidSeatsException extends Exception {
+    public InvalidSeatsException(String message) {
+        super(message);
+    }
+}
+
+class InsufficientSeatsException extends Exception {
+    public InsufficientSeatsException(String message) {
+        super(message);
+    }
+}
+
+// ---------- Business Logic Class ----------
+
+class BusBooking {
+    private int availableSeats;
+
+    public BusBooking(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
+    public void bookTicket(int age, int seatsRequested)
+            throws InvalidAgeException, InvalidSeatsException, InsufficientSeatsException {
+
+        if (age <= 0) {
+            throw new InvalidAgeException("Invalid age: age must be greater than 0.");
+        }
+
+        if (seatsRequested <= 0) {
+            throw new InvalidSeatsException("Invalid number of seats: seats must be greater than 0.");
+        }
+
+        if (seatsRequested > availableSeats) {
+            throw new InsufficientSeatsException(
+                    "Insufficient seats: only " + availableSeats + " seat(s) available, but "
+                            + seatsRequested + " requested.");
+        }
+
+        availableSeats -= seatsRequested;
+        System.out.println("Booking successful! " + seatsRequested + " seat(s) booked for passenger aged " + age + ".");
+        System.out.println("Remaining seats: " + availableSeats);
+    }
+}
+
+// ---------- Main Class ----------
+
+public class BusTicketBooking {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BusBooking bus = new BusBooking(10); // total available seats
+
+        try {
+            System.out.print("Enter passenger age: ");
+            int age = sc.nextInt();
+
+            System.out.print("Enter number of seats to book: ");
+            int seats = sc.nextInt();
+
+            bus.bookTicket(age, seats);
+
+        } catch (InvalidAgeException | InvalidSeatsException | InsufficientSeatsException e) {
+            System.out.println("Booking Error: " + e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid Input: Please enter numeric values only.");
+        } finally {
+            sc.close();
+        }
+    }
+}

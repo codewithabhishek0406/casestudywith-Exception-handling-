@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// ---------- Custom Exception Classes ----------
+
 
 class InvalidPriceException extends Exception {
     public InvalidPriceException(String message) {
@@ -27,7 +27,7 @@ class InsufficientPaymentException extends Exception {
     }
 }
 
-// ---------- Business Logic Class ----------
+
 
 class ShoppingCart {
 
@@ -60,7 +60,7 @@ class ShoppingCart {
     }
 }
 
-// ---------- Main Class ----------
+
 
 public class OnlineShoppingPayment {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// ---------- Custom Exception Classes ----------
+
 
 class InsufficientBalanceException extends Exception {
     public InsufficientBalanceException(String message) {
@@ -15,7 +15,7 @@ class InvalidWithdrawalAmountException extends Exception {
     }
 }
 
-// ---------- Business Logic Class ----------
+
 
 class BankAccount {
     private double balance;
@@ -42,12 +42,11 @@ class BankAccount {
     }
 }
 
-// ---------- Main Class ----------
 
 public class BankAccountWithdrawal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        BankAccount account = new BankAccount(5000.0); // initial balance
+        BankAccount account = new BankAccount(5000.0); 
 
         try {
             System.out.print("Enter amount to withdraw: ");

@@ -1,15 +1,13 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// ---------- Custom Exception Class ----------
+
 
 class InvalidMarksException extends Exception {
     public InvalidMarksException(String message) {
         super(message);
     }
 }
-
-// ---------- Business Logic Class ----------
 
 class StudentResult {
     private int[] marks;
@@ -35,8 +33,6 @@ class StudentResult {
         return (double) total / marks.length;
     }
 }
-
-// ---------- Main Class ----------
 
 public class StudentExaminationResult {
     public static void main(String[] args) {

@@ -1,16 +1,6 @@
 import java.util.ArrayList;
 
-/*
- * Case Study 3: Employee Salary List
- * ---------------------------------------------
- * A company stores employee salaries using an ArrayList<Integer>.
- * Operations:
- *   1. Store salaries.
- *   2. Display all salaries.
- *   3. Find the highest salary.
- *   4. Calculate the total salary.
- *   5. Calculate the average salary.
- */
+
 public class CaseStudy3_EmployeeSalaryList {
 
     private ArrayList<Integer> salaries;
